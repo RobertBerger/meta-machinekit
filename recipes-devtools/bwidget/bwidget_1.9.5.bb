@@ -13,8 +13,8 @@ SRC_URI[sha256sum] = "313229892075fecbe57eef63525a901f384822e67de67b06749a2ab7a5
 S = "${WORKDIR}/${PN}-${PV}"
 
 do_install() {
-	install -d ${D}${libdir}/tcl8.6
-	install -m 0644 ${S}/*.tcl ${D}${libdir}/tcl8.6
+        install -d ${D}${libdir}/tcl8.6/${PN}-${PV}
+        install -m 0644 ${S}/*.tcl ${D}${libdir}/tcl8.6/${PN}-${PV}
 
 	install -d ${D}${libdir}/tcl8.6/images
 	install -m 0644 ${S}/images/* ${D}${libdir}/tcl8.6/images
