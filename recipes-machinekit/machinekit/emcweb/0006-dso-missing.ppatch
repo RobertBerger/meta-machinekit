@@ -1,0 +1,12 @@
+Index: src/emc/usr_intf/Submakefile
+===================================================================
+--- src.orig/emc/usr_intf/Submakefile
++++ src/emc/usr_intf/Submakefile
+@@ -90,6 +90,6 @@ endif
+ ifeq "$(BUILD_EMCWEB)" "yes"
+ ../bin/emcweb: $(call TOOBJS, $(EMCWEBSRCS)) ../lib/liblinuxcnc.a ../lib/libnml.so.0 ../lib/liblinuxcncini.so.0
+ 	$(ECHO) Linking $(notdir $@)
+-	$(Q)$(CXX) $(LDFLAGS) -o $@ $(ULFLAGS) $^ -lboost_serialization-mt -lboost_thread-mt -lpthread -ldl	
++	$(Q)$(CXX) $(LDFLAGS) -o $@ $(ULFLAGS) $^ -lboost_serialization-mt -lboost_thread-mt -lpthread -ldl -lboost_system
+ TARGETS += ../bin/emcweb
+ endif

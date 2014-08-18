@@ -1,0 +1,13 @@
+Index: src/Makefile.inc
+===================================================================
+--- src.orig/Makefile.inc
++++ src/Makefile.inc
+@@ -240,7 +240,7 @@ HAVE_GNOMEPRINT =
+ # tcl tk cflags, includes and libs
+ TCL_DBGX=
+ TK_DBGX=
+-TCL_CFLAGS= -DUSE_TCL_STUBS  
++TCL_CFLAGS=-I=/usr/include/tcl8.6 -DUSE_TCL_STUBS -I/usr/include
+ TCL_LIBS=    -lXinerama 
+ HAVE_WORKING_BLT=no
+ 
