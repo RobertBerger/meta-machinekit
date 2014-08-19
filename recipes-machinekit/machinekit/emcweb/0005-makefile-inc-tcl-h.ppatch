@@ -7,7 +7,7 @@ Index: src/Makefile.inc
  TCL_DBGX=
  TK_DBGX=
 -TCL_CFLAGS= -DUSE_TCL_STUBS  
-+TCL_CFLAGS=-I=/usr/include/tcl8.6 -DUSE_TCL_STUBS -I/usr/include
++TCL_CFLAGS=-I=/usr/include/tcl8.6 -DUSE_TCL_STUBS
  TCL_LIBS=    -lXinerama 
  HAVE_WORKING_BLT=no
  
