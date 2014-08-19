@@ -17,6 +17,7 @@ file://0005-makefile-inc-tcl-h.ppatch \
 file://0006-dso-missing.ppatch \
 file://0007-missing-argument-to-l.ppatch \
 file://0008-rtlib-cross-compile.ppatch \
+file://0009-no-libglade.ppatch \
 "
 
 S = "${WORKDIR}/git/src/"
@@ -28,9 +29,8 @@ EXTRA_OECONF = "--disable-python "" \
                 --with-platform-beaglebone "" \
                 --disable-option-checking "" \
                 --with-boost-serialization=boost_serialization-mt "" \
-                --with-build-sysroot=${PKG_CONFIG_SYSROOT_DIR}"" \
-                --with-native-system-header-dir=${PKG_CONFIG_SYSROOT_DIR}\usr\include"" \
-                --with-tclConfig=${STAGING_LIBDIR} --with-tkConfig=${STAGING_LIBDIR}"
+                --with-tclConfig=/usr/lib "" \
+                --with-tkConfig=/usr/lib"
 
 do_configure() {
         ./autogen.sh
@@ -42,12 +42,17 @@ do_configure_append() {
       patch -p1 < ${WORKDIR}/0006-dso-missing.ppatch
       patch -p1 < ${WORKDIR}/0007-missing-argument-to-l.ppatch
       patch -p1 < ${WORKDIR}/0008-rtlib-cross-compile.ppatch
+      patch -p1 < ${WORKDIR}/0009-no-libglade.ppatch
 }
 
 do_compile() {
         ( export CPLUS_INCLUDE_PATH=${STAGING_INCDIR}/python2.7 
-        make VV=1 )
+        oe_runmake VV=1 )
+}
+
+do_install() {
+        oe_runmake install DESTDIR=${D}
 }
 
 inherit autotools gettext
-
+INSANE_SKIP_${PN} = "installed-vs-shipped debug-files "
