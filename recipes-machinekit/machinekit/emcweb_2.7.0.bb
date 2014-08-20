@@ -1,12 +1,7 @@
-#########################
-# native compilation
-#########################
 MAINTAINER = "Robert Berger <robert.berger@reliableembeddedsystems.com>"
 HOMEPAGE = "http://www.machinekit.io/"
 SUMMARY = "Machinekit is a platform for machine control applications."
-DESCRIPTION = "Machinekit is portable across a wide range of hardware platforms and real-time environments, and delivers excellent performance at low cost. It is based on
- the HAL component architecture, an intuitive and easy to use circuit model that includes over 150 building blocks for digital logic, motion, control loops, signal proces
-sing, and hardware drivers. Machinekit supports local and networked UI options, including ubiquitous platforms like phones or tablets."
+DESCRIPTION = "Machinekit is portable across a wide range of hardware platforms and real-time environments, and delivers excellent performance at low cost."
 PROVIDES = "emcweb"
 DEPENDS += "python-doctest boost tk bwidget tcl"
 
