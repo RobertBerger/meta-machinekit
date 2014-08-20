@@ -16,7 +16,6 @@ PR = "r1"
 
 SRC_URI = " \
 file://COPYING;md5=5ad41ed7aac91d2ffb194c9fc1d45ed8 \
-"
 
 #SRC_URI = " \
 #file://COPYING;md5=5ad41ed7aac91d2ffb194c9fc1d45ed8 \
