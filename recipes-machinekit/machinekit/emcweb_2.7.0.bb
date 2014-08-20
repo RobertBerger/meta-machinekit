@@ -25,8 +25,9 @@ S = "${WORKDIR}/git/src/"
 inherit useradd
 
 USERADD_PACKAGES = "${PN}"
-USERADD_PARAM_${PN} = "-u 1200 -d /home/machinekit -r -s /bin/bash machinekit"
-GROUPADD_PARAM_${PN} = "-g 1200 machinekit_group"
+#USERADD_PARAM_${PN} = "-u 1200 -d /home/machinekit -r -s /bin/bash machinekit"
+#GROUPADD_PARAM_${PN} = "-g 1200 machinekit_group"
+USERADD_PARAM_${PN} =" -m -r -s /bin/bash -d /home/machinekit machinekit"
 
 EXTRA_OECONF = "--disable-python "" \
                 --with-posix "" \
@@ -59,7 +60,7 @@ do_compile() {
 do_install() {
         install -d -m 755 ${D}${datadir}/machinekit
         chown -R machinekit ${D}${datadir}/machinekit
-        chgrp -R machinekit_group ${D}${datadir}/machinekit
+        chgrp -R machinekit ${D}${datadir}/machinekit
 
         oe_runmake install DESTDIR=${D}
 }
