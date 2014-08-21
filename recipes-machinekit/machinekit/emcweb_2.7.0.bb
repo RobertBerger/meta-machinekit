@@ -33,6 +33,7 @@ do_install () {
         install -d -m 755 ${D}${datadir}/machinekit
 
 #        install -p -m 644 machinekit.tar.bz2 ${D}${datadir}/machinekit/
+        install -p -m 644 COPYING ${D}${datadir}/machinekit/
 
         # The new users and groups are created before the do_install
         # step, so you are now free to make use of them:
@@ -54,5 +55,5 @@ INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 #INHIBIT_PACKAGE_SPLIT = "1"
 #INHIBIT_PACKAGE_STRIP = "1"
 # for now:
-INSANE_SKIP_${PN} = "installed-vs-shipped "
+#INSANE_SKIP_${PN} = "installed-vs-shipped "
 
