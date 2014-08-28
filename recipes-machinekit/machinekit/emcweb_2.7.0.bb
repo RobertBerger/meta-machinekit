@@ -3,7 +3,9 @@ HOMEPAGE = "http://www.machinekit.io/"
 SUMMARY = "Machinekit is a platform for machine control applications."
 DESCRIPTION = "Machinekit is portable across a wide range of hardware platforms and real-time environments, and delivers excellent performance at low cost."
 PROVIDES = "emcweb"
-DEPENDS += "python-doctest boost tk bwidget tcl"
+DEPENDS += "python-doctest boost tk bwidget tcl python-argparse bc python-tkinter python-distutils"
+
+PACKAGECONFIG_pn-boost = "python"
 
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=5ad41ed7aac91d2ffb194c9fc1d45ed8"
@@ -26,8 +28,12 @@ S = "${WORKDIR}"
 inherit useradd
 
 USERADD_PACKAGES = "${PN}"
-USERADD_PARAM_${PN} =" -m -r -s /bin/bash -d /home/machinekit machinekit"
-#USERADD_PARAM_${PN} = "-u 1200 -d /home/machinekit -r -s /bin/bash machinekit"
+
+# we need a special xenomai group
+GROUPADD_PARAM_${PN} = "-g 880 xenomai"
+
+# we need a non root user -> machinekit who is member of the xenomai group
+USERADD_PARAM_${PN} =" -m -r -s /bin/bash -G xenomai -d /home/machinekit machinekit"
 
 do_install () {
         install -d -m 755 ${D}${datadir}/machinekit
