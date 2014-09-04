@@ -84,12 +84,13 @@ pkg_postinst_${PN} () {
 #!/bin/bash -e
 if [ x"$D" = "x" ]; then
    # execute commands on target
+
+   # --> has to happen every time not just once
    # /dev/rtheap permissions, group
-   chmod 0660 /dev/rtheap
-   chgrp xenomai /dev/rtheap
-   # /dev/mem permissions, group
-   chmod 0660 /dev/mem
-   chgrp xenomai /dev/mem
+   # chmod 0660 /dev/rtheap
+   # chgrp xenomai /dev/rtheap
+   # <-- has to happen every time not just once
+
    # non standard xenomai library path
    echo /usr/xenomai/lib > /etc/ld.so.conf 
    ldconfig
