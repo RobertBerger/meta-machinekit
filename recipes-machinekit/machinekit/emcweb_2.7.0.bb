@@ -9,16 +9,16 @@ PACKAGECONFIG_pn-boost = "python"
 
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=5ad41ed7aac91d2ffb194c9fc1d45ed8"
-PR = "r1"
+PR = "r2"
 
 SRC_URI = " \
 file://COPYING;md5=5ad41ed7aac91d2ffb194c9fc1d45ed8 \
 file://machinekit \
 file://config-pin \
-http://www.reliableembeddedsystems.com/machinekit/machinekit-precompiled \
+http://www.reliableembeddedsystems.com/machinekit/machinekit-precompiled;name=machinekit-precompiled \
 "
-#file://machinekit-precompiled \
-#"
+
+SRC_URI[machinekit-precompiled.md5sum] = "412d5b37e64d8a4f912427f9c15edfe6"
 
 #SRC_URI = " \
 #file://COPYING;md5=5ad41ed7aac91d2ffb194c9fc1d45ed8 \
