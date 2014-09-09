@@ -19,6 +19,7 @@ http://www.reliableembeddedsystems.com/machinekit/machinekit-precompiled;name=ma
 "
 
 SRC_URI[machinekit-precompiled.md5sum] = "412d5b37e64d8a4f912427f9c15edfe6"
+SRC_URI[machinekit-precompiled.sha256sum] = "2089e09469d311ea516e1fe316534b2a20a92d866847b472488a32ed541524d5"
 
 #SRC_URI = " \
 #file://COPYING;md5=5ad41ed7aac91d2ffb194c9fc1d45ed8 \
