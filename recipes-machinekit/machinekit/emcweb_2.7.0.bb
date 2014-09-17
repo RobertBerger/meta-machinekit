@@ -9,7 +9,7 @@ PACKAGECONFIG_pn-boost = "python"
 
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=5ad41ed7aac91d2ffb194c9fc1d45ed8"
-PR = "r2"
+PR = "r3"
 
 SRC_URI = " \
 file://COPYING;md5=5ad41ed7aac91d2ffb194c9fc1d45ed8 \
@@ -18,8 +18,13 @@ file://config-pin \
 http://www.reliableembeddedsystems.com/machinekit/machinekit-precompiled;name=machinekit-precompiled \
 "
 
-SRC_URI[machinekit-precompiled.md5sum] = "412d5b37e64d8a4f912427f9c15edfe6"
-SRC_URI[machinekit-precompiled.sha256sum] = "2089e09469d311ea516e1fe316534b2a20a92d866847b472488a32ed541524d5"
+SRC_URI[machinekit-precompiled.md5sum] = "ac0b383d514a2aa67df871c165b95988"
+SRC_URI[machinekit-precompiled.sha256sum] = "7a65a49dfc84b5f3d6b7cfc379ac01011db7004881f181b352d338c06b5c5e2c"
+
+#working:
+#SRC_URI[machinekit-precompiled.md5sum] = "412d5b37e64d8a4f912427f9c15edfe6"
+#SRC_URI[machinekit-precompiled.sha256sum] = "2089e09469d311ea516e1fe316534b2a20a92d866847b472488a32ed541524d5"
+
 
 #SRC_URI = " \
 #file://COPYING;md5=5ad41ed7aac91d2ffb194c9fc1d45ed8 \
